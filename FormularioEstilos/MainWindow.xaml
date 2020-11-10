@@ -1,0 +1,81 @@
+﻿<Window x:Class="FormularioEstilos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FormularioEstilos"
+        mc:Ignorable="d"
+        Title="Formulario" Height="450" Width="800" MinWidth="800" MinHeight="600" Icon="32.ico">
+
+    <DockPanel LastChildFill="True">
+        <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" FontSize="40" FontWeight="Bold">Formulario</TextBlock>
+
+        <DockPanel DockPanel.Dock="Bottom" LastChildFill="False" Margin="10">
+            <TextBlock DockPanel.Dock="Left" FontSize="20" FontStyle="Italic">Susan Rojas</TextBlock>
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                <Button>Aceptar</Button>
+                <Button>Cancelar</Button>
+            </StackPanel>
+        </DockPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="1" Margin="10" Source="foto.jpg" Stretch="Fill"/>
+
+            <StackPanel Grid.Column="0">
+                <Border Style="{StaticResource datos}" Background="Azure">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="25"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Column="0">Nombre</TextBlock>
+                        <TextBox Grid.Column="1"></TextBox>
+                        <Image Style="{StaticResource info}" Grid.Column="2" ToolTip="Máximo 100 caracteres"/>
+                        <TextBlock Grid.Column="0" Grid.Row="1">Edad</TextBlock>
+                        <TextBox Grid.Column="1" Grid.Row="1"></TextBox>
+                        <Image Style="{StaticResource info}" Grid.Column="2" Grid.Row="1" ToolTip="Número entre 0 y 100"/>
+                        <TextBlock Grid.Column="0" Grid.Row="2">Dirección</TextBlock>
+                        <TextBox Grid.Column="1" Grid.Row="2"></TextBox>
+                        <Image Style="{StaticResource info}" Grid.Column="2" Grid.Row="2" ToolTip="Incluir el código postal"/>
+
+                    </Grid>
+                </Border>
+
+
+                <Border Style="{StaticResource datos}" Background="LemonChiffon">
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <GroupBox Header="Aficiones">
+                            <StackPanel>
+                                <CheckBox>Hacer deporte</CheckBox>
+                                <CheckBox>Viajar</CheckBox>
+                                <CheckBox>Ver series</CheckBox>
+                                <CheckBox>Leer comics</CheckBox>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="Estado civil">
+                            <StackPanel>
+                                <RadioButton IsChecked="True">Soltero</RadioButton>
+                                <RadioButton>Casado</RadioButton>
+                                <RadioButton>Divorciado</RadioButton>
+                                <RadioButton>Viudo</RadioButton>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+
+    </DockPanel>
+</Window>
